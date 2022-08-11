@@ -1,0 +1,21 @@
+import random
+import math
+print("Mention the range of numbers")
+l = int(input('Lower range = '))
+u = int(input('Upper range = '))
+min_no_of_moves = round(math.log(u-l+1,2))
+print('You have',min_no_of_moves,'chances to find the chosen number')
+n = random.randint(l,u)
+count = 0
+while count<min_no_of_moves:
+  x = int(input('Guess the number = '))
+  if x>n:
+    print('You guessed too big')
+  elif x<n:
+    print('You guessed too small')
+  elif x == n:
+    print('You found the number')
+    break
+  count = count+1
+if x !=n:
+  print('Better luck next time!')
